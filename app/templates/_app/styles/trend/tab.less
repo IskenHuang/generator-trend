@@ -1,0 +1,74 @@
+// Tab left
+//
+// Left side tab
+//
+// Markup:
+// <ul class="tab-left">
+//     <li class="active">
+//         <div class="arrow"></div>
+//         <a href="#" data-toggle="tab">Tab1</a>
+//     </li>
+//     <li>
+//         <div class="arrow"></div>
+//         <a href="#" data-toggle="tab">Tab2</a>
+//     </li>
+//     <li>
+//         <div class="arrow"></div>
+//         <a href="#" data-toggle="tab">Tab3</a>
+//     </li>
+//     <li>
+//         <div class="arrow"></div>
+//         <a href="#" data-toggle="tab">Tab4</a>
+//     </li>
+// </ul>
+//
+// Styleguide 8.1
+.tab-left {
+    margin-left: -17px;
+    list-style: none;
+    margin-bottom: 20px;
+    display: table;
+    width: 100%;
+
+    > li {
+        height: 45px;
+        width: 95%;
+        padding-left: 6px;
+        border-right: #D7D7D7 1px solid;
+        border-bottom: #D7D7D7 1px solid;
+        margin-left: 5px;
+        font-size: 15px;
+
+        &:hover{
+            border-left: #E83254 6px solid;
+            padding-left: 0px;
+        }
+
+        a {
+            color: #555555;
+            line-height: 3.2em;
+            padding-left: 10px;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .active {
+        border-left: #E83254 6px solid;
+        padding-left: 0px;
+        background-color: #F5F5F5;
+        font-weight: bold;
+
+        .arrow {
+            background-image: url("../img/trend/ic_arrow.png");
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            margin-left: 62.2%;
+            margin-top: 13px;
+        }
+    }
+}

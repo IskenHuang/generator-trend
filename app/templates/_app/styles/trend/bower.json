@@ -1,0 +1,10 @@
+{
+  "name": "trend-consumer-bootstrap",
+  "version": "0.2",
+  "main": "config.less",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

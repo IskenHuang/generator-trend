@@ -1,0 +1,77 @@
+// Popover with title
+//
+// Markup:
+// <div class="popover {$modifiers}">
+//     <div class="arrow"></div>
+//     <h3 class="popover-title">Popover left</h3>
+//     <div class="popover-content">
+//         <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+//     </div>
+// </div>
+//
+// .left    - Arrow Left
+// .right   - Arrow Right
+// .top     - Arrow Top
+// .bottom  - Arrow Bottom
+//
+// Styleguide 7.1
+.popover {
+    background-color: @popoverArrowColor;
+    .border-radius(0);
+}
+
+.popover-title, .popover-content {
+    background-color: @popoverArrowColor;
+    color: #fff;
+}
+
+.popover-title {
+    padding: 5px 8px;
+    .text-overflow();
+}
+
+.popover-content {
+    padding: 5px 8px 10px;
+}
+
+.popover {
+  &.top .arrow {
+    &:after {
+      border-top-color: @popoverArrowColor;
+    }
+  }
+  &.right .arrow {
+    &:after {
+      border-right-color: @popoverArrowColor;
+    }
+  }
+  &.bottom .arrow {
+    &:after {
+      border-bottom-color: @popoverArrowColor;
+    }
+  }
+
+  &.left .arrow {
+    &:after {
+      border-left-color: @popoverArrowColor;
+    }
+  }
+
+}
+
+// Popover without title
+//
+// Markup:
+// <div class="popover {$modifiers}">
+//     <div class="arrow"></div>
+//     <div class="popover-content">
+//         <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+//     </div>
+// </div>
+//
+// .left    - Arrow Left
+// .right   - Arrow Right
+// .top     - Arrow Top
+// .bottom  - Arrow Bottom
+//
+// Styleguide 7.2

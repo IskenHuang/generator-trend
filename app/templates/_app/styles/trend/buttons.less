@@ -1,0 +1,248 @@
+@import '../../components/bootstrap/less/buttons';
+// Button
+//
+// A button suitable for giving stars to someone.
+//
+// Markup:
+// <button class="btn {$modifiers}">Button</button>
+//
+// :hover             - Subtle hover highlight.
+// :active            - Subtle active status.
+// .disabled          - Disabled Status
+// .btn-small         - Smaller button.
+// .btn-primary       - A primary button.
+// .btn-primary:hover - A primary button with hover status.
+// .btn-primary:active - A primary button with active status.
+// .btn-primary.disabled - A primary button with disabled status.
+// .btn-primary.btn-small - A primary button with smaller size.
+// .btn-ruby          - A Trend Micro Branding style button, using for the major visual specific.
+// .btn-ruby:hover    - A Trend Micro Branding style button with hover status.
+// .btn-ruby:active   - A Trend Micro Branding style button with active status.
+// .btn-ruby.disabled   - A Trend Micro Branding style button with disabled status.
+// .btn-ruby.btn-small - A Trend Micro Branding style button with smaller size.
+//
+// Styleguide 2.1
+.btnRubyBackgroundNormal {
+    .gradient(~"linear-gradient(90deg, #e44e56 0%, #db3d44 100%)");
+}
+.btnRubyBackgroundHover {
+    .gradient(~"linear-gradient(90deg, #ee5e64 0%, #db3d44 100%)");
+}
+.btnRubyBackgroundActive {
+    background: #db3d44;
+}
+
+@button-large-min-width: 114px;
+@button-large-padding: 18px;
+@button-small-min-width: 62px;
+@button-small-padding: 15px;
+@button-border-width: 1px;
+
+.btn {
+    min-width: @button-large-min-width;
+    padding: 0 @button-large-padding;
+    color: #666;
+    text-shadow: 0 1px rgba(255, 255, 255, .8);
+    .border-radius(4px);
+    height: 42px;
+    line-height: 42px;
+    .gradient(~"linear-gradient(0deg, #f8f8f8 0%, #eee 100%)");
+    .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.7)");
+    font-size: 15px;
+
+    &:hover {
+        color: #555;
+        border: 1px solid #a5a5a5;
+        .gradient(~"linear-gradient(0deg, #f2f2f2 0%, #e6e6e6 100%)");
+        .transition(~"none");
+        background-position: center center;
+    }
+
+    &:active {
+        background: #e4e4e4;
+        border: 1px solid #a5a5a5;
+        .box-shadow(~"inset 0 1px 0 rgba(0,0,0, 0.1)");
+        background-position: center center;
+    }
+
+    &:focus {
+        .transition(~"none");
+        background-position: center center;
+    }
+
+    &.btn-primary {
+        .gradient(~"linear-gradient(0deg, #188bc5 0%, #39c 100%)");
+        .box-shadow(~"inset 0 1px 0 rgba(255,255,255, .2)");
+        border-color: @btnPrimaryButtonBackground;
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+
+        &:hover {
+            color: #fff;
+            .gradient(~"linear-gradient(0deg, #47a3d1 0%, #2a87c3 100%)");
+            .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.2)");
+        }
+
+        &:active {
+            background: #2a87c3;
+            .box-shadow(~"inset 0 1px 0 rgba(0, 0, 0, 0.1)");
+        }
+    }
+
+    &.btn-hero {
+        color: #fff;
+        .border-radius(0 5px 5px 0);
+        border: 1px solid #b32028;
+        .gradient(~"linear-gradient(0deg, #e44e56 0%, #db3d44 100%)");
+        .box-shadow(~"-1px 0 0 0 rgba(0, 0, 0, 3), inset 0 1px 0 0 rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.14)");
+
+        &.inner-icon {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+    }
+
+    &.btn-ruby {
+        color: #fff;
+        text-shadow: 0 -1px 0 rgba(0,0,0, 0.3);
+        .gradient(~"linear-gradient(0deg, #e44e56 0%, #db3d44 100%)");
+        border-color: #b32028;
+        &:hover {
+            color: #fff;
+            .gradient(~"linear-gradient(0deg, #ee5e64 0%, #db3d44 100%)");
+            .box-shadow(~"0 1px 2px rgba(0,0,0, 0.2)");
+            border-color: #b32028;
+        }
+        &:active {
+            background: #db3d44;
+            .box-shadow(~"inset 0 1px 0 rgba(0,0,0, 0.1)");
+            border-color: #b32028;
+        }
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:active {
+        color: #aaa;
+        background: #eaeaea;
+        border: 1px solid #ccc;
+    }
+
+
+    &.btn-small {
+        font-size: 13px;
+        min-width: @button-small-min-width;
+        padding: 0 @button-small-padding;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+// .btn {
+//   color: #666;
+
+//   min-width: 112px;
+//   height: 41px;
+//   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+//   box-sizing: border-box;
+
+//   &:hover {
+//     color: #555;
+//     border: 1px solid #a5a5a5;
+//     .gradient(~"linear-gradient(0deg, #f2f2f2 0%, #e6e6e6 100%)");
+//   }
+//   &:active {
+//     background: #e4e4e4;
+//     border: 1px solid #a5a5a5;
+//     .box-shadow(~"inset 0 1px 0 rgba(0,0,0, 0.1)");
+//   }
+//   &.btn-primary {
+//     .gradient(~"linear-gradient(0deg, #188bc5 0%, #39c 100%)");
+//     .box-shadow(~"inset 0 1px 0 rgba(255,255,255, .2)");
+//     border-color: @btnPrimaryButtonBackground;
+//     color: #fff;
+//     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+//     &:hover {
+//       color: #fff;
+//       .gradient(~"linear-gradient(0deg, #47a3d1 0%, #2a87c3 100%)");
+//       .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.2)");
+//     }
+//     &:active {
+//       background: #2a87c3;
+//       .box-shadow(~"inset 0 1px 0 rgba(0, 0, 0, 0.1)");
+//     }
+//   }
+//   &.btn-hero {
+//       color: #fff;
+//       .border-radius(0 5px 5px 0);
+//       border: 1px solid #b32028;
+//       .gradient(~"linear-gradient(0deg, #e44e56 0%, #db3d44 100%)");
+//       .box-shadow(~"-1px 0 0 0 rgba(0, 0, 0, 3), inset 0 1px 0 0 rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.14)");
+
+//       &.inner-icon {
+//           width: 50px;
+//           height: 50px;
+//           display: inline-block;
+//       }
+//   }
+//   &.btn-ruby {
+//     color: #fff;
+//     text-shadow: 0 -1px 0 rgba(0,0,0, 0.3);
+//     .gradient(~"linear-gradient(0deg, #e44e56 0%, #db3d44 100%)");
+//     border-color: #b32028;
+//     &:hover {
+//       color: #fff;
+//       .gradient(~"linear-gradient(0deg, #ee5e64 0%, #db3d44 100%)");
+//       .box-shadow(~"0 1px 2px rgba(0,0,0, 0.2)");
+//       border-color: #b32028;
+//     }
+//     &:active {
+//       background: #db3d44;
+//       .box-shadow(~"inset 0 1px 0 rgba(0,0,0, 0.1)");
+//       border-color: #b32028;
+//     }
+//   }
+//   &.disabled,
+//   &.disabled:hover,
+//   &.disabled:active {
+//   	color: #aaa;
+//   	background: #eaeaea;
+//   	border: 1px solid #ccc;
+//   }
+//   &.btn-small {
+//   	font-size: 13px;
+// 		height: 30px;
+// 		min-width: auto;
+// 		padding: 0 13px;
+//   }
+// }
+
+// Buttons for downloading App
+//
+//
+//
+// Markup:
+// <button class="btn {$modifiers}">Button</button>
+//
+// .btn-google-play   - Subtle active status.
+// .btn-google-play:hover             - Subtle hover highlight.
+// .btn-google-play:active            - Subtle active status.
+//
+// Styleguide 2.2
+.btn-google-play {
+	.gradient(~"url(@{pathForBrandingImage}/logo_google_play_s1.png), linear-gradient(0deg, #f8f8f8 0%, #eee 100%)");
+	.box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.7)");
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 132px;
+	height: 30px;
+	text-indent: -10000px;
+	&:hover {
+		.gradient(~"url(@{pathForBrandingImage}/logo_google_play_s1.png), linear-gradient(0deg, #f2f2f2 0%, #e6e6e6 100%)");
+	}
+	&:active {
+		background: #e4e4e4 url("@{pathForBrandingImage}/logo_google_play_s1.png") no-repeat center center;
+		.box-shadow(~"inset 0 1px 0 rgba(0, 0, 0, 0.1)");
+	}
+}

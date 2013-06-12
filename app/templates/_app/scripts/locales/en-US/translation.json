@@ -1,0 +1,10 @@
+{
+    "company_name"        : "Trend Micro",
+    "product_name"        : "<%= projectName %>",
+    "herder_gethelp"      : "Get Help",
+    "footer_lang_default" : "English",
+    "footer_lang_zh_TW"   : "Chinese",
+    "footer_lang_en_US"   : "English",
+    "footer_lang_jp_JP"   : "Japan",
+    "footer_copyright"    : "Copyright © 2013 Trend Micro Incorporated. All rights reserved"
+}

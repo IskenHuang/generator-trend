@@ -1,13 +1,42 @@
-# Generator-trend
-[![Build Status](https://secure.travis-ci.org/IskenHuang/generator-trend.png?branch=master)](https://travis-ci.org/IskenHuang/generator-trend)
+               ██████████████
+           ██████████████████████
+        ███████████████████████████
+      █████████████████████         █
+    ██████████████████████████████              ███████████   ██████████      ██████████    ████     ███    ████████
+   ████████████████████████████████    █        ███████████   ████████████    ██████████    ██████   ███    ███████████
+  ██████████████████████████████████    █           ███       ███      ███    ███           ███████  ███    ███     ████
+  ██████████████████████████████████    █           ███       ████████████    ██████████    ███ ████ ███    ███      ███
+ ███████████   ████████████████████    ███          ███       ██████████      ███           ███  ███████    ███      ███
+ ████████     ████████████████████    ████          ███       ███    ████     ███           ███   ██████    ███     ████
+ ████            ████████████████    █████          ███       ███     ████    ██████████    ███    █████    ███████████
+ ██████     ████████████████████    ██████
+  ████      ██████████████████    ███████                                                                                TM
+  ███      █████████████████    █████████         ██   ██          ██           █████          ██████           █████
+   ██      ██████████████     ██████████          ███ ███          ██          ██   ██         ██   ██         █    ██
+    █       █████████       ███████████           █ █ █ █          ██          ██              ██████         ██    ██
+                         █████████████            █ ███ █          ██           ██████         ██  ██          ██████
+                    ████████████████
+          █████████████████████████
+         █████████████████████████
+          ███████████████████████
+               ██████████████
 
-A generator for Yeoman.
+
+A generator for Yeoman for TrendMicro.
+(current is not registered on npm)
 
 ## Getting started
-- Make sure you have [yo](https://github.com/yeoman/yo) installed:
+* Make sure you have [yo](https://github.com/yeoman/yo) installed:
     `npm install -g yo`
-- Install the generator: `npm install -g generator-trend`
-- Run: `yo trend`
+* make your project folder `mkdir myProject && mkdir node_modules`
+* Install the generator: `git clone https://github.com/IskenHuang/generator-trend.git && mv generator-trend node_modules/`
+* Run: `yo trend`
+* Start app on local `grunt server`
+
+## TODO
+SASS support
+Javascript support
+
 
 ## License
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)

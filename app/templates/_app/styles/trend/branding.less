@@ -1,0 +1,258 @@
+// Trend Micro Header
+//
+// A standard Trend Micro branding header.
+//
+// Markup:
+// <div class="wrapper">
+//     <div class="trend-header">
+//         <div class="trend-header-wrapper navbar clearfix container">
+//             <h1 class="product-name pull-left">
+//                 <img src="img/trend/ic_logo_productsymbol.png" alt="" class="logo">
+//                 <img src="img/trend/ic_logo_productname.png" alt="DirectPass" class="product-name">
+//             </h1>
+//             <div class="nav pull-right">
+//                 <button class="btn btn-ruby btn-small">Sign In</button>
+//                 <div id="header-user" class="dropdown">
+//                     <!-- <a class="dropdown-toggle btn btn-link" data-toggle="dropdown" href="#" id="userMenuHeader">User</a>
+//                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
+//                         <li>Settings</li>
+//                         <li>Log out</li>
+//                     </ul> -->
+//                 </div>
+//                 <!-- <button type="button" class="btn testing-signin">Signin</button> -->
+//                 <!-- <button type="button" class="btn testing-inputmasterpassword">input master password</button> -->
+//             </div>
+//         </div>
+//     </div>
+// </div>
+//
+// Styleguide 4.1
+.trend-header {
+    .box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.5));
+    background-color: #fff;
+    padding: 0 0 12px;
+    height: 72px;
+    position: relative;
+    .box-sizing(border-box);
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 5px;
+        .box-shadow(inset 0 -1px 0 rgba(0, 0, 0, 0.1));
+        background-color: #e30919;
+    }
+
+    .trend-header-wrapper {
+        position: relative;
+        padding: 15px 0 0;
+        vertical-align: top;
+    }
+
+    .logo {
+        float: left;
+    }
+    .product-name {
+        margin: 0;
+        text-indent: 7px;
+        text-align: left;
+        vertical-align: top;
+    }
+    a {
+        color: #555;
+    }
+
+}
+
+.trend-header {
+    .navbar {
+        margin-bottom: 0;
+    }
+}
+
+// Navigator footer
+//
+// A standard company sitemap footer.
+//
+// Markup:
+// <div class="navigator-footer layout-home">
+//   <div class="container">
+//     <div class="row">
+//       <div class="span5">
+//         <p class="navigator-footer-title">
+//           Security Software Products
+//         </p>
+//         <ul class="navigator-footer-items">
+//           <li><a href="#">Lorem ipsum sit dolor commodo</a></li>
+//           <li><a href="#">dolor ut nostrud consectetur fugiat</a></li>
+//           <li><a href="#">reprehenderit velit consectetur aute</a></li>
+//           <li><a href="#">proident nostrud sint quis aliqua dolore commodo laboris.</a></li>
+//           <li><a href="#">Lorem ipsum sit dolor commodo</a></li>
+//           <li><a href="#">dolor ut nostrud consectetur fugiat</a></li>
+//           <li><a href="#">reprehenderit velit consectetur aute</a></li>
+//           <li><a href="#">proident nostrud sint quis aliqua dolore commodo laboris.</a></li>
+//         </ul>
+//       </div>
+//       <div class="span5">
+//         <p class="navigator-footer-title">
+//           Security Software Products
+//         </p>
+//         <ul class="navigator-footer-items">
+//           <li><a href="#">Lorem ipsum sit dolor commodo</a></li>
+//           <li><a href="#">dolor ut nostrud consectetur fugiat</a></li>
+//           <li><a href="#">reprehenderit velit consectetur aute</a></li>
+//           <li><a href="#">proident nostrud sint quis aliqua dolore commodo laboris.</a></li>
+//         </ul>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+//
+// Styleguide 4.2
+
+.navigator-footer {
+    background-color: #f5f5f5;
+    padding-top: 40px;
+}
+
+.navigator-footer-title {
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.navigator-footer-items {
+    color: #888;
+    font-size: 13px;
+    list-style: none;
+    margin-left: 0;
+    > li {
+        margin-bottom: 6px;
+        padding-right: 10px;
+    }
+    &:last-child {
+        margin-bottom: 29px;
+    }
+}
+
+// Trend Micro Footer
+//
+// A standard Trend Micro branding footer style.
+//
+// Markup:
+// <footer class="trend-footer container">
+//     <ul class="footer-links">
+//         <li class="language">
+//             <a class="dropdown-toggle expand" data-toggle="dropdown" href="#">English</a>
+//             <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
+//                 <li>
+//                     <a href="#">English</a>
+//                 </li>
+//                 <li>
+//                     <a href="#">Chinese</a>
+//                 </li>
+//                 <li>
+//                     <a href="#">Japanese</a>
+//                 </li>
+//             </ul>
+//         </li>
+//         <li>
+//             <a class="link" href="#">Leagal Policies &amp; Privacy</a>
+//         </li>
+//         <li>
+//             <a class="link" href="#">Contact us</a>
+//         </li>
+//         <li>
+//             <a class="link" href="#">TrendMicro.com</a>
+//         </li>
+//     </ul>
+//     <div class="copyright">
+//         Copyright © 2013 Trend Micro Incorporated. All rights reserved
+//     </div>
+//     <div class="tm-logo">
+//         Trend Micro
+//     </div>
+// </footer>
+//
+// Styleguide 4.3
+
+.trend-footer {
+    background-color: #f5f5f5;
+    // Set the fixed height of the footer here
+    border-top: 1px solid #ddd;
+    height: 90px;
+    position: relative;
+
+    .language, .product {
+        color: #444;
+        padding-left: 24px;
+        height: 18px;
+        line-height: 18px;
+        background-position: 0 0;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        .expand {
+            padding-right: 24px;
+            background: transparent url("@{pathForBrandingImage}/ic_openarrow.png") no-repeat right 0;
+        }
+    }
+
+    .product {
+        background-image: url("@{pathForBrandingImage}/ic_product.png");
+    }
+
+    .language {
+        background-image: url("@{pathForBrandingImage}/ic_lang.png");
+    }
+    a {
+        color: #888;
+        text-decoration: none;
+        &:hover {
+            color: #db3d44;
+        }
+    }
+
+    .tm-logo {
+        position: absolute;
+        top: 12px;
+        right: 0;
+        background: transparent url("@{pathForBrandingImage}/ic_trendmicro_logo.png") no-repeat center center;
+        width: 80px;
+        height: 28px;
+        overflow: hidden;
+        text-indent: -99999px;
+    }
+
+}
+
+.copyright {
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 14px;
+}
+
+
+.footer-wrapper {
+    position: relative;
+}
+
+.footer-links {
+    margin:12px 0 22px;
+    position:relative;
+
+    >* {
+        display: inline-block;
+        margin: 5px 0;
+        padding: 0 18px 0 0;
+    }
+
+    .link {
+        background: transparent url("@{pathForBrandingImage}/ic_dot.png") no-repeat right center;
+        &:last-child {
+            background-image: none;
+        }
+    }
+
+}

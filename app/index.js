@@ -1,4 +1,10 @@
 'use strict';
+
+/**
+ * Doc url
+ * https://github.com/yeoman/generator/wiki/base
+ */
+
 var util = require('util'),
     path = require('path'),
     yeoman = require('yeoman-generator'),
@@ -26,13 +32,7 @@ var util = require('util'),
 '\n'+'          ███████████████████████'.red+
 '\n'+'               ██████████████'.red+
 '\n';
-
 console.log(welcome);
-
-
-
-
-process.exit(0);
 
 var TrendGenerator = module.exports = function TrendGenerator(args, options, config) {
     yeoman.generators.Base.apply(this, arguments);
@@ -52,29 +52,55 @@ TrendGenerator.prototype.askFor = function askFor() {
     // have Yeoman greet the user.
     console.log(this.yeoman);
 
-    var prompts = [{
-        type: 'confirm',
-        name: 'someOption',
-        message: 'Would you like to enable this option?',
-        default: true
-    }];
+    var prompts = [
+    {
+        name: 'projectName',
+        message: 'What do you want to call your project?',
+        default: 'myProject',
+        warning: 'Error'
+    },
+    {
+        name: 'cssLanguage',
+        message: 'Which stylesheet language (SASS or LESS)?',
+        default: 'LESS',
+        warning: 'Error'
+    },
+    {
+        name: 'isCoffeeScript',
+        message: 'Would you like to Coffee-script (y/n)?',
+        default: 'y',
+        warning: 'Error'
+    }
+    ];
 
     this.prompt(prompts, function (props) {
-        this.someOption = props.someOption;
+        this.projectName = props.projectName;
+        this.cssLanguage = props.cssLanguage.toUpperCase();
+        if(props.isCoffeeScript.toLowerCase().indexOf('y') >= 0){
+            this.isCoffeeScript = true;
+        }else{
+            this.isCoffeeScript = false;
+        }
 
         cb();
     }.bind(this));
 };
 
 TrendGenerator.prototype.app = function app() {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+    this.directory('_app', 'app');
+    this.template('_index.html', 'app/index.html');
 
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
+    // project default
+    this.template('_bower.json', 'bower.json');
+    this.template('_package.json', 'package.json');
+    this.template('_README.md', 'README.md');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
 };
 
 TrendGenerator.prototype.projectfiles = function projectfiles() {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
+    this.copy('_bowerrc', '.bowerrc');
+    this.copy('_editorconfig', '.editorconfig');
+    this.copy('_gitattributes', '.gitattributes');
+    this.copy('_gitignore', '.gitignore');
+    this.copy('_jshintrc', '.jshintrc');
 };

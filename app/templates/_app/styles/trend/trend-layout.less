@@ -1,0 +1,97 @@
+/* Template */
+#page-wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    // Negative indent footer by it's height
+    margin: 0 auto -90px;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 90px;
+    }
+    > .layout-home:last-child {
+        border-bottom: none;
+    }
+}
+
+.layout-home {
+    border-bottom: 1px solid #ddd;
+    padding: 45px 0 25px;
+}
+
+.product-banner {
+    margin-top: 3px;
+    padding-top: 20px;
+    .gradient(~"linear-gradient(180deg, #f8f9f9 0%, #f1f2f2 100%)");
+}
+.product-banner-container {
+    padding-top: 110px;
+}
+.product-banner-title {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+.product-banner-description {
+    margin-bottom: 23px;
+}
+.download-from {
+    margin-bottom: 40px;
+}
+
+.features {
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+    text-align: center;
+    .features-title {
+        line-height: 32px;
+        margin: 40px auto 25px;
+        // .span(16);
+    }
+    .features-description {
+        color: #777;
+        font-size: 15px;
+        text-align: left;
+        margin-top: 20px;
+        padding-bottom: 40px;
+    }
+}
+
+.product-video {
+    text-align: center;
+}
+
+.product-video-title {
+    margin: 40px 0 25px;
+}
+
+.product-video-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 0 auto 53px;
+    width: 640px;
+}
+
+/* Sign In Form */
+
+.sign-in {
+    .gradient(~"linear-gradient(180deg, #f8f9f9 0%, #f1f2f2 100%)");
+    text-align: center;
+}
+
+.sign-in-container {
+    margin: 0 auto;
+    text-align: left;
+    // .span(8);
+    h2 {
+        text-align: center;
+    }
+    button {
+        margin-bottom: 27px;
+    }
+}
+
+.sign-in-help {
+    margin: 0 0 10px;
+}

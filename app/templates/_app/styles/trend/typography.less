@@ -1,0 +1,75 @@
+html, body {
+    height: 100%;
+}
+
+body { font:13px  Arial, Helvetica, Verdana, sans-serif; color: @brandingDark;
+}
+
+// Typography
+//
+// Describe how the typography will be in Trend Micro products.
+//
+// Markup:
+// <p class="{$modifiers}">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+// <p class="{$modifiers}">abcdefghijkmnopqrstuvwxyz</p>
+// <p class="{$modifiers}">1234567890</p>
+//
+// .h1        - font size for h1
+// .h2        - font size for h2
+// .h3        - font size for h3
+// .h4        - font size for h4
+// .h5        - font size for h5
+// .h6        - font size for h6
+//
+// Styleguide 1.1
+
+/* Interstate Fonts embeded */
+@font-face {
+    .font-face("InterstateExtraLight", "@{pathForBrandingFont}/Interstate-ExtraLight");
+}
+
+@font-face {
+    .font-face("InterstateLight", "@{pathForBrandingFont}/Interstate-Light");
+}
+
+@font-face {
+    .font-face("InterstateRegular", "@{pathForBrandingFont}/Interstate-Regular");
+}
+
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+h1, .h1{font-size:44px; color:@brandingDark; line-height:1em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+h2, .h2{font-size:38px; color:@brandingDark; line-height:1em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+h3, .h3{font-size:35px; color:@brandingDark; line-height:1.3em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+h4, .h4{font-size:32px; color:@brandingDark; line-height:1.3em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+h5, .h5{font-size:27px; color:@brandingDark; line-height:1.3em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+h6, .h6{font-size:25px; color:@brandingDark; line-height:1.3em; letter-spacing : -0.05em ; font-family: "InterstateExtraLight";}
+
+.h6 {
+    color: #666;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+// Link
+//
+// Normally, Links on the page are the same color.
+// Expect to Header & Footer.
+//
+// Markup:
+// <a href="#">Link to somewhere</a>
+//
+// :hover        - Hover status
+//
+// Styleguide 1.2
+a {
+    color: #4a8db8;
+    &:hover {
+        color: #39c;
+    }
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

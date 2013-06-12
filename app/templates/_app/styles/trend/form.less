@@ -1,0 +1,299 @@
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    color: #aaa;
+    font-size: 17px;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    margin: 0;
+    padding: 10px 12px 10px 12px;
+    .border-radius(0);
+    &:focus {
+        color: #222;
+        border: 1px solid #999;
+        box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+// Form
+//
+// Form relative items should be included in form tag.
+//
+// Markup:
+// <form class="form">
+//  <fieldset>
+//  <legend class="form-caption"><h2>Sign in to Trend Micro Account</h2></legend>
+//  <div class="sign-in-container control-group error">
+//    <label class="form-label">Email</label>
+//    <div class="controls">
+//        <input type="text" class="span8 input" placeholder="Email">
+//    </div>
+// <div class="form-error">
+//     <span class="form-arrow"></span>
+//     <div class="form-error-message">
+//         Lorem ipsum In laboris ex deserunt magna qui Excepteur non sint nisi aliqua Ut fugiat sunt do fugiat.
+//     </div>
+// </div>
+//    <label class="form-label"><input type="password" class="span8 input" placeholder="Password"></label>
+//    <input name="remember-account" id="remember-account" type="checkbox" class="input form-checkbox">
+//    <label class="form-label" for="remember-account">Remember me on this computer</label>
+// <div class="form-error">
+//     <span class="form-arrow"></span>
+//     <div class="form-error-message">
+//         Lorem ipsum In laboris ex deserunt magna qui Excepteur non sint nisi aliqua Ut fugiat sunt do fugiat.
+//     </div>
+// </div>
+//    <button class="btn btn-large btn-ruby">Sign In</button>
+//    <div class="sign-in-help">
+//      <a href='#'>Forgot which address you used before</a>
+//    </div>
+//    <div class="sign-in-help">
+//      <a href="#">Forgot your password?</a>
+//    </div>
+//  </div>
+//  </fieldset>
+// </form>
+//
+// Styleguide 3.1
+
+.form {
+
+
+}
+
+.form-caption {
+    margin: 0 0 24px;
+}
+
+.form-label {
+    margin-bottom: 15px;
+}
+
+// Input checkbox
+//
+// Customized checkbox for better visibility.
+//
+// Markup:
+// <div class="{$modifiers}">
+//   <input name="remember-account" id="remember-account" type="checkbox" class="input {$modifiers}">
+//   <label class="form-label" for="remember-account">Remember me on this computer</label>
+// </div>
+//
+// .form-checkbox         - customize checkbox
+//
+// Styleguide 3.2.1
+
+input[type="checkbox"].form-checkbox,
+input[type="radio"].form-radio, {
+    opacity: 0;
+
+    float: left;
+    width: 19px;
+
+    + label {
+        clear: none;
+        padding: 0 0 0 25px;
+        cursor: pointer;
+    }
+
+    &:hover + label {
+        background-position: 0 -20px;
+    }
+
+    &:checked + label {
+        background-position: 0 -40px;
+    }
+
+    &:checked:hover + label {
+        background-position: 0 -60px;
+    }
+
+}
+
+input[type="checkbox"].form-checkbox {
+
+    + label {
+        background: transparent url("@{pathForBrandingImage}/ic_checkbox.png") no-repeat 0 0;
+    }
+}
+
+
+// Input Radio
+//
+// Customized radio button for better visibility.
+//
+// Markup:
+// <div class="{$modifiers}">
+//   <input name="remember-account" id="remember-account" type="radio" class="input {$modifiers}">
+//   <label class="form-label" for="remember-account">Remember me on this computer</label>
+// </div>
+//
+// .form-radio         - customize radio
+//
+// Styleguide 3.2.2
+
+input[type="radio"].form-radio {
+
+    + label {
+        background: transparent url("@{pathForBrandingImage}/ic_radio.png") no-repeat 0 0;
+    }
+}
+
+// Search input with giant button
+//
+// Generally speaking, UI Designer will use this component as search input.
+//
+// Markup:
+// <div class="input-append btn-hero">
+//  <input type="text">
+//  <span class="btn-hero btn add-on inner-icon">
+//      <span class="icon-search icon"></span>
+//  </span>
+// </div>
+//
+// Styleguide 3.3
+
+.input-append {
+    &.btn-hero {
+        input {
+            height: 33px;
+        }
+        .btn {
+            height: 58px;
+            width: 58px;
+            padding: 0;
+            margin-left: -4px;
+            .btnRubyBackgroundNormal;
+            &:hover {
+                .btnRubyBackgroundHover;
+            }
+            &:active {
+                .btnRubyBackgroundActive;
+            }
+            cursor: pointer;
+        }
+    }
+    .icon-search {
+        background-image: url(../img/ic_searchbar_web.png);
+        background-repeat: no-repeat;
+        background-position:center center;
+        // .gradient(~"url(../img/ic_searchbar_web.png), linear-gradient(90deg, #e44e56 0%, #db3d44 100%)");
+    }
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+// Different input sizes
+//
+// You could use different sizes of input on your UI with simple CSS class.
+//
+// Markup:
+// <label class="form-label">Text Field</label>
+// <input type="text" class="{$modifiers}">
+//
+// .input-mini       - mini one
+// .input-small      - small one
+// .input-medium      - medium one
+// .input-large       - large one
+// .input-xlarge      - extra large
+// .input-xxlarge     - largest one
+//
+// Styleguide 3.4
+
+// Selector
+//
+// Selector for single selection using
+//
+// Markup:
+// <select><option>Option 1</option></select>
+//
+// Styleguide 3.5
+
+
+// Error messages for Form elements
+//
+// Markup:
+// <div class="form-error">
+//     <span class="form-arrow"></span>
+//     <div class="form-error-message">
+//         Lorem ipsum In laboris ex deserunt magna qui Excepteur non sint nisi aliqua Ut fugiat sunt do fugiat.
+//     </div>
+// </div>
+//
+// Styleguide 3.6
+.form-error {
+    background: #ffd1d0 url("@{pathForBrandingImage}/ic_input_error.png") no-repeat 15px 8px;
+    .border-radius(2px);
+    padding: 8px 15px 8px 37px;
+    position: relative;
+    margin: 0 0 15px 0;
+    >.form-arrow {
+        background: transparent url("@{pathForBrandingImage}/ic_input_errorarrow_up.png") no-repeat 0 0;
+        width: 15px;
+        height: 8px;
+        position: absolute;
+        top: -8px;
+        left: 10px;
+    }
+}
+
+.ak-input-group {
+    border-width : 1px;
+    border-style : solid;
+    border-color : #999999;
+    padding      : 2px;
+    height       : 38px;
+    width        : 335px;
+
+    div {
+        float : left;
+    }
+
+    .ak-input {
+        border           : none;
+        font-size        : 14pt;
+        width            : 49px;
+        text-align       : center;
+        background-color : rgba(0, 0, 0, 0);
+        margin-left      : -6px;
+        margin-right     : -6px;
+    }
+
+    .ak-input-space {
+        font-size      : 16pt;
+        vertical-align : middle;
+    }
+}
+
+// AK input
+//
+// AK input form
+//
+// Markup:
+// <div class="ak-input-group">
+//     <div><input id="ak1" name="ak1" maxlength="4" class="ak-input" type="text"></div>
+//     <div><span class="ak-input-space">-</span><input id="ak2" name="ak2" maxlength="4" class="ak-input" type="text"></div>
+//     <div><span class="ak-input-space">-</span><input id="ak3" name="ak3" maxlength="4" class="ak-input" type="text"></div>
+//     <div><span class="ak-input-space">-</span><input id="ak4" name="ak4" maxlength="4" class="ak-input" type="text"></div>
+//     <div><span class="ak-input-space">-</span><input id="ak5" name="ak5" maxlength="4" class="ak-input" type="text"></div>
+// </div>
+//
+// Styleguide 3.7

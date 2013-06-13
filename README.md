@@ -10,8 +10,8 @@ A generator for Yeoman for TrendMicro.
 * Start app on local `grunt server`
 
 ## TODO
-SASS support
-Javascript support
+* SASS support
+* Javascript support
 
 
 ## License

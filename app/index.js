@@ -87,14 +87,26 @@ TrendGenerator.prototype.askFor = function askFor() {
 };
 
 TrendGenerator.prototype.app = function app() {
+    var _type = this.isCoffeeScript ? 'coffee' : 'js';
     this.directory('_app', 'app');
     this.template('_index.html', 'app/index.html');
+    this.copy('_scripts_'+_type+'/app.'+_type, 'app/scripts/app.'+_type);
+    this.copy('_scripts_'+_type+'/EventChannel.'+_type, 'app/scripts/EventChannel.'+_type);
+    this.copy('_scripts_'+_type+'/main.'+_type, 'app/scripts/main.'+_type);
+    this.copy('_scripts_'+_type+'/views/BaseView.'+_type, 'app/scripts/views/BaseView.'+_type);
+    this.copy('_scripts_'+_type+'/views/ContentManager.'+_type, 'app/scripts/views/ContentManager.'+_type);
+    this.copy('_scripts_'+_type+'/views/IndexLayout.'+_type, 'app/scripts/views/IndexLayout.'+_type);
 
     // project default
     this.template('_bower.json', 'bower.json');
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
-    this.copy('_Gruntfile.js', 'Gruntfile.js');
+
+    if(this.isCoffeeScript){
+        this.copy('_Gruntfile_coffee_less.js', 'Gruntfile.js');
+    }else{
+        this.copy('_Gruntfile_js_less.js', 'Gruntfile.js');
+    }
 };
 
 TrendGenerator.prototype.projectfiles = function projectfiles() {

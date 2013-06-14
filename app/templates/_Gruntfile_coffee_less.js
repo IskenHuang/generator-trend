@@ -364,7 +364,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee:dist',
+        'coffee',
         // 'compass:dist',
         'less',
         'useminPrepare',

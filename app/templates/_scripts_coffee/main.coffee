@@ -19,6 +19,5 @@ require.config(
             deps: ['jquery']
 )
 
-# define ['app', 'jquery'], (App, $) ->
 require ['app', 'jquery'], (App, $) ->
     App.start()

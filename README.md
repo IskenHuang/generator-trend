@@ -11,7 +11,6 @@ A generator for Yeoman for TrendMicro.
 
 ## TODO
 * SASS support
-* Javascript support
 
 
 ## License

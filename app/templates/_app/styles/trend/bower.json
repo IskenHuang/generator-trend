@@ -1,10 +1,14 @@
 {
-  "name": "trend-consumer-bootstrap",
+  "name": "trend-branding-styleguide",
   "version": "0.2",
   "main": "config.less",
   "ignore": [
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~2.3.1",
+    "lesshat": "~1.1.1"
+  }
 }

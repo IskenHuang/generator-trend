@@ -18,25 +18,24 @@
     <body>
         <div class="wrapper">
             <div class="trend-header">
-                <div class="trend-header-wrapper navbar clearfix container">
-                    <h1 class="product-name pull-left">
-                        <img src="images/trend/ic_logo_productsymbol.png" alt="" class="logo">
-                        <img src="images/trend/ic_logo_productname.png" alt="DirectPass" class="product-name">
-                    </h1>
-                    <div class="nav pull-right">
-                        <button class="btn btn-link btn-small" data-i18n="herder_gethelp"></button>
-                        <div id="header-user" class="dropdown">
-                            <!-- <a class="dropdown-toggle btn btn-link" data-toggle="dropdown" href="#" id="userMenuHeader">User</a>
-                            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
-                                <li>Settings</li>
-                                <li>Log out</li>
-                            </ul> -->
-                        </div>
-                        <!-- <button type="button" class="btn testing-signin">Signin</button> -->
-                        <!-- <button type="button" class="btn testing-inputmasterpassword">input master password</button> -->
-                    </div>
-                </div>
+            <div class="trend-header-wrapper navbar clearfix container">
+                <h1 class="product-name pull-left">
+                    <img src="img/trend/ic_logo_productsymbol.png" alt="" class="logo">
+                    <img src="img/trend/ic_logo_productname.png" alt="<%= projectName %>" class="product-name">
+                </h1>
+                <ul class="nav pull-right">
+                    <li>
+                        <a href="#" data-i18n="herder_get_pro_subscription"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-i18n="herder_get_help">Get Help</a>
+                    </li>
+                    <li>
+                        <a href="#" class="btn btn-ruby btn-small">Sign In</a>
+                    </li>
+                </ul>
             </div>
+        </div>
             <div class="row-fluid wrapper-content">
                 <div class="container" data-js="content">
                     <h1><%= projectName %></h1>

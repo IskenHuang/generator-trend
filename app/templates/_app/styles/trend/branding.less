@@ -3,26 +3,23 @@
 // A standard Trend Micro branding header.
 //
 // Markup:
-// <div class="wrapper">
-//     <div class="trend-header">
-//         <div class="trend-header-wrapper navbar clearfix container">
-//             <h1 class="product-name pull-left">
-//                 <img src="img/trend/ic_logo_productsymbol.png" alt="" class="logo">
-//                 <img src="img/trend/ic_logo_productname.png" alt="DirectPass" class="product-name">
-//             </h1>
-//             <div class="nav pull-right">
-//                 <button class="btn btn-ruby btn-small">Sign In</button>
-//                 <div id="header-user" class="dropdown">
-//                     <!-- <a class="dropdown-toggle btn btn-link" data-toggle="dropdown" href="#" id="userMenuHeader">User</a>
-//                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
-//                         <li>Settings</li>
-//                         <li>Log out</li>
-//                     </ul> -->
-//                 </div>
-//                 <!-- <button type="button" class="btn testing-signin">Signin</button> -->
-//                 <!-- <button type="button" class="btn testing-inputmasterpassword">input master password</button> -->
-//             </div>
-//         </div>
+// <div class="trend-header">
+//     <div class="trend-header-wrapper navbar clearfix container">
+//         <h1 class="product-name pull-left">
+//             <img src="img/trend/ic_logo_productsymbol.png" alt="" class="logo">
+//             <img src="img/trend/ic_logo_productname.png" alt="DirectPass" class="product-name">
+//         </h1>
+//         <ul class="nav pull-right">
+//             <li>
+//                 <a href="#" data-i18n="herder_get_pro_subscription"></a>
+//             </li>
+//             <li>
+//                 <a href="#" data-i18n="herder_get_help">Get Help</a>
+//             </li>
+//             <li>
+//                 <a href="#" class="btn btn-ruby btn-small">Sign In</a>
+//             </li>
+//         </ul>
 //     </div>
 // </div>
 //
@@ -34,6 +31,8 @@
     height: 72px;
     position: relative;
     .box-sizing(border-box);
+    // set z-index to 1 to make sure it will not be blocked by other elements
+    z-index: 1;
 
     &:before {
         content: '';
@@ -48,6 +47,18 @@
         position: relative;
         padding: 15px 0 0;
         vertical-align: top;
+    }
+
+    .header-user {
+        padding-left: 20px;
+        background: transparent url("@{pathForBrandingImage}/ic_user.png") no-repeat 0 10px;
+    }
+
+    .expand-down {
+        background: transparent url("@{pathForBrandingImage}/ic_showall.png") no-repeat right 11px;
+        padding: 0 20px 0 5px!important;
+        height: 28px;
+        line-height: 40px;
     }
 
     .logo {
@@ -68,6 +79,14 @@
 .trend-header {
     .navbar {
         margin-bottom: 0;
+        .nav {
+            a.btn {
+                padding: 0 15px;
+                color: #fff;
+                text-shadow: none;
+                box-sizing: border-box;
+            }
+        }
     }
 }
 
@@ -142,37 +161,27 @@
 // A standard Trend Micro branding footer style.
 //
 // Markup:
-// <footer class="trend-footer container">
-//     <ul class="footer-links">
-//         <li class="language">
-//             <a class="dropdown-toggle expand" data-toggle="dropdown" href="#">English</a>
-//             <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
-//                 <li>
-//                     <a href="#">English</a>
-//                 </li>
-//                 <li>
-//                     <a href="#">Chinese</a>
-//                 </li>
-//                 <li>
-//                     <a href="#">Japanese</a>
-//                 </li>
-//             </ul>
-//         </li>
-//         <li>
-//             <a class="link" href="#">Leagal Policies &amp; Privacy</a>
-//         </li>
-//         <li>
-//             <a class="link" href="#">Contact us</a>
-//         </li>
-//         <li>
-//             <a class="link" href="#">TrendMicro.com</a>
-//         </li>
-//     </ul>
-//     <div class="copyright">
-//         Copyright © 2013 Trend Micro Incorporated. All rights reserved
-//     </div>
-//     <div class="tm-logo">
-//         Trend Micro
+// <footer class="trend-footer">
+//     <div class="container">
+//         <div class="row-fluid footer-wrapper">
+//             <div class="footer-links">
+//                 <div class="language dropup">
+//                     <a class="expand dropdown-toggle" data-toggle="dropdown" href="#">
+//                         English
+//                     </a>
+//                     <ul class="dropdown-menu">
+//                         <li><a href="#">Chinese</a></li>
+//                         <li><a href="#">English</a></li>
+//                         <li><a href="#">Japanese</a></li>
+//                     </ul>
+//                 </div>
+//                 <a class="link" href="#">Privacy Policy</a>
+//                 <a class="link" href="#">Contact Us</a>
+//                 <a class="link" href="#">TrendMicro.com</a>
+//             </div>
+//             <div class="copyright" data-i18n="copyright"></div>
+//             <img src="img/trend/ic_tmlogo_web.png" class="tm-logo">
+//         </div>
 //     </div>
 // </footer>
 //
@@ -250,6 +259,7 @@
 
     .link {
         background: transparent url("@{pathForBrandingImage}/ic_dot.png") no-repeat right center;
+        vertical-align: top;
         &:last-child {
             background-image: none;
         }

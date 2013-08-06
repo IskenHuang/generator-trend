@@ -1,3 +1,20 @@
+// Basic
+//
+// Markup:
+// <div class="popover {$modifiers}">
+//     <div class="arrow"></div>
+//     <div class="popover-content">
+//         <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+//     </div>
+// </div>
+//
+// .left    - Arrow Left
+// .right   - Arrow Right
+// .top     - Arrow Top
+// .bottom  - Arrow Bottom
+//
+// Styleguide 7.1
+
 // Popover with title
 //
 // Markup:
@@ -14,15 +31,16 @@
 // .top     - Arrow Top
 // .bottom  - Arrow Bottom
 //
-// Styleguide 7.1
+// Styleguide 7.2
 .popover {
     background-color: @popoverArrowColor;
-    .border-radius(0);
+    .border-radius(2px);
+    box-shadow: none;
 }
 
 .popover-title, .popover-content {
     background-color: @popoverArrowColor;
-    color: #fff;
+    color: #eee;
 }
 
 .popover-title {
@@ -32,7 +50,15 @@
 
 .popover-content {
     padding: 5px 8px 10px;
+    line-height: 1.3em;
+    font-size: 13px;
+
+    > p {
+      margin: 0;
+    }
 }
+
+
 
 .popover {
   &.top .arrow {
@@ -58,20 +84,3 @@
   }
 
 }
-
-// Popover without title
-//
-// Markup:
-// <div class="popover {$modifiers}">
-//     <div class="arrow"></div>
-//     <div class="popover-content">
-//         <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-//     </div>
-// </div>
-//
-// .left    - Arrow Left
-// .right   - Arrow Right
-// .top     - Arrow Top
-// .bottom  - Arrow Bottom
-//
-// Styleguide 7.2

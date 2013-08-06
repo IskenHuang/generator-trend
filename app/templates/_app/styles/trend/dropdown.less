@@ -1,6 +1,6 @@
 // Dropdown
 //
-// Dropdown menu can be used in many places
+// Dropdown menu can be used in many places.
 //
 // Markup:
 // <div class="dropdown open">
@@ -12,12 +12,41 @@
 // </div>
 //
 // Styleguide 6.1
+
+.dropup {
+    .dropdown-menu {
+        left: -20px;
+        margin-bottom: 8px;
+
+        &:after {
+            top: auto;
+            bottom: -6px;
+            border-top: 6px solid #fff;
+            border-bottom: none;
+        }
+
+        &:before {
+            top: auto;
+            bottom: -7px;
+            border-top: 7px solid #ccc;
+            border-bottom: none;
+        }
+    }
+
+}
+
 .dropdown-menu {
+
     .border-radius(0);
     min-width: 200px;
     // Links within the dropdown menu
-    overflow-y: auto;
-    overflow-x: hidden;
+    // overflow-y: auto;
+    // overflow-x: hidden;
+
+    &.pull-right {
+        right: -20px;
+    }
+
     > li {
         padding: 0 6px;
         > a {
@@ -31,34 +60,54 @@
             }
         }
     }
+
+    &:after {
+        position: absolute;
+        top: -6px;
+        left: 22px;
+        display: inline-block;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #ffffff;
+        border-left: 6px solid transparent;
+        content: '';
+    }
+
+    &.pull-right:after {
+        right: 22px;
+        left: auto;
+    }
+
+    &:before {
+        position: absolute;
+        top: -7px;
+        left: 21px;
+        display: inline-block;
+        border-right: 7px solid transparent;
+        border-bottom: 7px solid #ccc;
+        border-left: 7px solid transparent;
+        // border-bottom-color: rgba(0, 0, 0, 0.2);
+        content: '';
+    }
+
+    &.pull-right:before {
+        right: 21px;
+        left: auto;
+    }
 }
 
-.navbar .nav > li > .dropdown-menu:before {
-  position: absolute;
-  top: -7px;
-  left: 9px;
-  display: inline-block;
-  border-right: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-  border-left: 7px solid transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  content: '';
+.navbar .pull-right > li > .dropdown-menu:before, .navbar .nav > li > .dropdown-menu.pull-right:before {
+    right: 20px;
 }
 
-.dropdown-menu:after {
-    position: absolute;
-    top: -6px;
-    left: 10px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #ffffff;
-    border-left: 6px solid transparent;
-    content: '';
+.navbar .pull-right > li > .dropdown-menu:after, .navbar .nav > li > .dropdown-menu.pull-right:after {
+    right: 21px;
 }
 
-.dropdown-menu:after, .dropdown-menu.pull-right:after {
-    right: 13px;
-    left: auto;
+
+.dropdown-submenu {
+    position: absolute!important;
+    top: 40%;
+    right: 100%;
 }
 
 .dropdown-menu > li > a:hover,
@@ -67,7 +116,7 @@
 .dropdown-submenu:focus > a {
     text-decoration: none;
     color: @dropdownLinkColorHover;
-    background: @white;
+    background: @tableBackgroundHover;
     .user-select();
 }
 
@@ -77,18 +126,20 @@
 //
 // Markup:
 // <div class="wrapper">
-//     <div class="trend-header">
-//         <div class="trend-header-wrapper navbar clearfix">
-//             <h1 class="product-name pull-left">
-//                 <img src="img/trend/ic_logo_productsymbol.png" alt="" class="logo">
-//                 <img src="img/trend/ic_logo_productname.png" alt="DirectPass" class="product-name">
-//             </h1>
-//             <ul class="nav pull-right">
-//                 <li id="header-user" class="dropdown open">
-//                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="userMenuHeader">Randy Lien</a>
-//                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
-//                         <li><a href="#">Settings</a></li>
-//                         <li>
+// <div class="trend-header">
+//     <div class="container">
+//         <div class="row-fluid">
+//             <div class="trend-header-wrapper navbar span24 clearfix">
+//                 <h1 class="product-name pull-left">
+//                     <img src="img/ic_logo_productsymbol.png" alt="" class="logo">
+//                     <img src="img/ic_logo_productname.png" alt="Product Name" class="product-name">
+//                 </h1>
+//                 <ul class="nav pull-right">
+//                     <li id="header-user" class="dropdown header-user">
+//                         <a class="dropdown-toggle expand-down" data-toggle="dropdown" href="#" id="userMenuHeader">Randy Lien</a>
+//                         <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
+//                             <li><a href="#">Settings</a></li>
+//                             <li>
 //                                <a href="#" class="" data-toggle="dropdown">Log out</a>
 //                                <ul class="dropdown-submenu dropdown-menu" aria-labelledby="subMenu">
 //                                    <li>
@@ -101,14 +152,14 @@
 //                                        <a href="#">Sub Settings</a>
 //                                    </li>
 //                                </ul>
-//                        </li>
-//                     </ul>
-//                 </li>
-//                 <!-- <button type="button" class="btn testing-signin">Signin</button> -->
-//                 <!-- <button type="button" class="btn testing-inputmasterpassword">input master password</button> -->
-//             </ul>
+//                            </li>
+//                         </ul>
+//                     </li>
+//                 </ul>
+//             </div>
 //         </div>
 //     </div>
+// </div>
 // </div>
 //
 // Styleguide 6.2
@@ -139,7 +190,7 @@
 //             <ul class="nav pull-right">
 //                 <li id="header-user" class="dropdown open">
 //                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="userMenuHeader">Randy Lien</a>
-//                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu" style="max-height: 90px">
+//                     <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="userMenuHeader" id="userMenu">
 //                         <li><a href="#" class="text-overflow">Settings</a></li>
 //                         <li><a href="#" class="text-overflow">Log out</a></li>
 //                         <li><a href="#" class="text-overflow">Settings</a></li>
@@ -163,3 +214,14 @@
 .dropdown-container {
     padding: 5px 0;
 }
+
+// .dropdown-menu.caret-up:before {
+//     content: '';
+//     background: transparent url("@{pathForBrandingImage}/ic_menu_arrow_up.png") no-repeat 0 0;
+//     display: inline-block;
+//     height: 12px;
+//     width: 23px;
+//     position: absolute;
+//     top: -12px;
+//     right: 0;
+// }

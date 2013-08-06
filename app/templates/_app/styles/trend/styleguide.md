@@ -1,17 +1,51 @@
 <h1 class="kss-title kss-title-main">CSS Styleguide</h1>
 
+<div class="trendmicro size128">
+  <div class="round">
+    <div class="gloss"></div>
+    <div class="hook-outer">
+      <div class="hook"></div>
+      <div class="hook-s"></div>
+    </div>
+    <div class="t">t</div>
+    <div class="t2">c</div>
+    <div class="gloss-bottom"></div>
+  </div>
+  <div class="round-shadow"></div>
+  <div class="wording-trend">TREND</div>
+  <div class="wording-micro">MICRO</div>
+  <div class="trademark">™</div>
+</div>
+
+
+
 Trend Micro Branding Styleguide is used for all of company relative products.
 It is good for UI Designers, Visual Designers, Front End Developers and all Trenders.
 You could reference this document to help you to think about your design or leverage the existing UI elements without creating everything from scratch.
 
+# How to use
+
+## Use Less (Preprocessor)
+
+1. You should have a node.js ready environment. (http://www.nodejs.org)
+2. You should install bower by this command before  `npm install -g bower` 
+3. Please run `bower install` to install the relative dependencies.
+4. Right now you could use import to use any packages you want to use.
+
+## Use CSS
+
+1. You could use <link> tag from HTML document or @import from CSS files.
+
+
 # Coding Style
 
-1. Use soft-tabs with a two space indent.
-2. Put spaces after : in property declarations.
-3. Put spaces before { in rule declarations.
-4. Use hex color codes #000 unless using rgba.
-5. Use // for comment blocks (instead of /* */).
-6. Document styles with KSS.
+1. Use soft-tabs with a *two space indent*.
+2. *Put spaces after : in property declarations*.
+3. *Put spaces before { in rule declarations*.
+4. Use *hex color codes* #000 unless using *rgba*.
+5. Use *// for comment blocks* (instead of /* */).
+6. Document styles with *KSS*.
+7. Please reference to CSS guideline to know more details.
 
 ```css
 // This is a good example!

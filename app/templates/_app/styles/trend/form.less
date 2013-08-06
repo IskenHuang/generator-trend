@@ -19,12 +19,22 @@ input[type="color"],
     background-color: #fff;
     border: 1px solid #bbb;
     margin: 0;
-    padding: 10px 12px 10px 12px;
+    padding: 6px 13px 6px 13px;
     .border-radius(0);
     &:focus {
         color: #222;
-        border: 1px solid #999;
+        border: 1px solid #777;
         box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &.input-giant {
+        padding: 10px 13px;
+    }
+
+    &[disabled], &.input-disabled {
+        border: 1px solid #ddd;
+        color: #aaa;
+        background-color: #f0f0f0;
     }
 }
 
@@ -40,15 +50,17 @@ input[type="color"],
 //  <div class="sign-in-container control-group error">
 //    <label class="form-label">Email</label>
 //    <div class="controls">
-//        <input type="text" class="span8 input" placeholder="Email">
-//    </div>
+//        <input type="text" class="span8 input input-giant" placeholder="Email">
 // <div class="form-error">
 //     <span class="form-arrow"></span>
 //     <div class="form-error-message">
 //         Lorem ipsum In laboris ex deserunt magna qui Excepteur non sint nisi aliqua Ut fugiat sunt do fugiat.
 //     </div>
 // </div>
-//    <label class="form-label"><input type="password" class="span8 input" placeholder="Password"></label>
+//    </div>
+//    <label class="form-label">
+//      <input type="password" class="span8 input input-giant" placeholder="Password">
+//    </label>
 //    <input name="remember-account" id="remember-account" type="checkbox" class="input form-checkbox">
 //    <label class="form-label" for="remember-account">Remember me on this computer</label>
 // <div class="form-error">
@@ -88,10 +100,10 @@ input[type="color"],
 // Customized checkbox for better visibility.
 //
 // Markup:
-// <div class="{$modifiers}">
-//   <input name="remember-account" id="remember-account" type="checkbox" class="input {$modifiers}">
-//   <label class="form-label" for="remember-account">Remember me on this computer</label>
-// </div>
+// <label class="form-label">
+//     <input data-js="checkbox-block-dangerous-website" class="input {$modifiers}" type="checkbox">
+//     <span data-i18n="web_threat_protection_block_dangerous_website">Sign me in!</span>
+// </label>
 //
 // .form-checkbox         - customize checkbox
 //
@@ -99,10 +111,11 @@ input[type="color"],
 
 input[type="checkbox"].form-checkbox,
 input[type="radio"].form-radio, {
+    // opacity: 0;
     opacity: 0;
-
     float: left;
     width: 19px;
+    margin-left: -20px;
 
     + label {
         clear: none;
@@ -110,25 +123,33 @@ input[type="radio"].form-radio, {
         cursor: pointer;
     }
 
-    &:hover + label {
+    + span:before {
+        content: '';
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+        visibility: visible;
+        position: relative;
+        top: 5px;
+        margin-right: 10px
+    }
+
+    &:hover + span:before {
         background-position: 0 -20px;
     }
 
-    &:checked + label {
+    &:checked + span:before {
         background-position: 0 -40px;
     }
 
-    &:checked:hover + label {
+    &:checked:hover + span:before {
         background-position: 0 -60px;
     }
 
 }
 
-input[type="checkbox"].form-checkbox {
-
-    + label {
-        background: transparent url("@{pathForBrandingImage}/ic_checkbox.png") no-repeat 0 0;
-    }
+input[type="checkbox"].form-checkbox + span:before {
+    background: transparent url("@{pathForBrandingImage}/ic_checkbox.png") no-repeat 0 0;
 }
 
 
@@ -137,35 +158,19 @@ input[type="checkbox"].form-checkbox {
 // Customized radio button for better visibility.
 //
 // Markup:
-// <div class="{$modifiers}">
-//   <input name="remember-account" id="remember-account" type="radio" class="input {$modifiers}">
-//   <label class="form-label" for="remember-account">Remember me on this computer</label>
-// </div>
+// <label class="form-label">
+//     <input data-js="" class="input {$modifiers}" type="radio">
+//     <span data-i18n="">Remember me on this computer</span>
+// </label>
 //
 // .form-radio         - customize radio
 //
 // Styleguide 3.2.2
 
-input[type="radio"].form-radio {
-
-    + label {
-        background: transparent url("@{pathForBrandingImage}/ic_radio.png") no-repeat 0 0;
-    }
+input[type="radio"].form-radio + span:before {
+    background: transparent url("@{pathForBrandingImage}/ic_radio.png") no-repeat 0 0;
 }
 
-// Search input with giant button
-//
-// Generally speaking, UI Designer will use this component as search input.
-//
-// Markup:
-// <div class="input-append btn-hero">
-//  <input type="text">
-//  <span class="btn-hero btn add-on inner-icon">
-//      <span class="icon-search icon"></span>
-//  </span>
-// </div>
-//
-// Styleguide 3.3
 
 .input-append {
     &.btn-hero {
@@ -201,6 +206,8 @@ input[type="radio"].form-radio {
     display: block;
 }
 
+
+
 // Different input sizes
 //
 // You could use different sizes of input on your UI with simple CSS class.
@@ -216,7 +223,23 @@ input[type="radio"].form-radio {
 // .input-xlarge      - extra large
 // .input-xxlarge     - largest one
 //
-// Styleguide 3.4
+// Styleguide 3.4.1
+
+
+
+// Different inputs & status
+//
+// Normal one, Bigger one, and Disabled one
+//
+// Markup:
+// <input name="remember-account" id="remember-account" type="text" class="input {$modifiers}">
+//
+// .input-giant        - Sometimes you might need a BIGGER input
+// .input-disabled     - Disbaled status, you should use disabled attribute to make it work perfectly.
+//
+// Styleguide 3.4.2
+
+
 
 // Selector
 //
@@ -241,6 +264,7 @@ input[type="radio"].form-radio {
 // Styleguide 3.6
 .form-error {
     background: #ffd1d0 url("@{pathForBrandingImage}/ic_input_error.png") no-repeat 15px 8px;
+    color: #f00;
     .border-radius(2px);
     padding: 8px 15px 8px 37px;
     position: relative;
@@ -253,33 +277,82 @@ input[type="radio"].form-radio {
         top: -8px;
         left: 10px;
     }
+
+    >.form-error-message {
+        line-height: 1.3em;
+        font-size: 13px;
+    }
+}
+
+
+// Overwrite the original bootstrap style
+.control-group.error input, .control-group.error select, .control-group.error textarea {
+    border-color: #f00;
+}
+
+.ak-group {
+    overflow: initial;
+    width: 100%;
+    margin-left: 0px;
+
+    .error-border {
+        border: #FF0000 1px solid;
+    }
+
+    .ak-error {
+        display: block;
+        margin-top: 34px;
+        width: 352px;   // 398px(origin) - 44px(padding) - 2px(border)
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    .ak-error-arrow {
+        width: 24px;
+        height: 8px;
+        background:url(../img/ic_input_errorarrow_up.png) no-repeat center center;
+        margin-top: 0px;
+    }
+
+    .ak-error-message {
+        color: #FF0012;
+        padding: 8px 10px 8px 36px;
+        background: #FDD4D2 url(../img/ic_input_error.png) no-repeat 10px 10px;
+        margin-top: 0px;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .submit-ak {
+        margin-left : 20px;
+    }
 }
 
 .ak-input-group {
-    border-width : 1px;
-    border-style : solid;
-    border-color : #999999;
-    padding      : 2px;
-    height       : 38px;
-    width        : 335px;
-
     div {
-        float : left;
+        float: left;
     }
 
     .ak-input {
-        border           : none;
-        font-size        : 14pt;
-        width            : 49px;
-        text-align       : center;
-        background-color : rgba(0, 0, 0, 0);
-        margin-left      : -6px;
-        margin-right     : -6px;
+        border: 1px #999 solid;
+        font-size: 18pt;
+        width: 68px;
+        height: 32px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0);
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
     }
 
     .ak-input-space {
-        font-size      : 16pt;
-        vertical-align : middle;
+        font-size: 14pt;
+        vertical-align: middle;
+        width: 12px;
+        display: inline-block;
+        text-align: center;
     }
 }
 

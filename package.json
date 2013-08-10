@@ -1,6 +1,6 @@
 {
   "name": "generator-trend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A generator for Yeoman, create trend style project",
   "keywords": [
     "yeoman-generator",

@@ -35,6 +35,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
+            less: {
+                files: ['<%= yeoman.app %>/styles/{,*}/*.{less,css}'],
+                tasks: ['less']
+            },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/*.html',
@@ -288,15 +292,26 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            dataUTF8: {
+            trendFont: {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/components/DrawChinese/',
-                    dest: '.tmp',
-                    src: [
-                        'data/utf8/{,*/}*.xml'
-                    ]
+                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/fonts',
+                    dest: '<%= yeoman.app %>'
+                    // src: [
+                    //     'data/utf8/{,*/}*.xml'
+                    // ]
+                }]
+            },
+            trendImages: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/img',
+                    dest: '<%= yeoman.app %>',
+                    // src: [
+                    //     'data/utf8/{,*/}*.xml'
+                    // ]
                 }]
             }
         },

@@ -296,22 +296,22 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/fonts',
-                    dest: '<%= yeoman.app %>'
-                    // src: [
-                    //     'data/utf8/{,*/}*.xml'
-                    // ]
+                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/fonts/',
+                    dest: '<%= yeoman.app %>/font',
+                    src: [
+                        '**'
+                    ]
                 }]
             },
             trendImages: {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/img',
-                    dest: '<%= yeoman.app %>',
-                    // src: [
-                    //     'data/utf8/{,*/}*.xml'
-                    // ]
+                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/img/',
+                    dest: '<%= yeoman.app %>/img/trend/',
+                    src: [
+                        '**'
+                    ]
                 }]
             }
         },
@@ -337,13 +337,6 @@ module.exports = function (grunt) {
                     stdout: true,
                     stderr: true
                 }
-            },
-            linkDataUTF8: {
-                command: 'ln -s ../app/components/DrawChinese/data ./.tmp/data',
-                options: {
-                    stdout: true,
-                    stderr: true
-                }
             }
         },
     });
@@ -357,12 +350,13 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
+            'copy:trendFont',
+            'copy:trendImages',
             'coffee:dist',
             // 'compass:server',
             'less',
             'livereload-start',
             'connect:livereload',
-            'shell:linkDataUTF8',
             'open',
             'watch'
         ]);
@@ -380,6 +374,8 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'coffee:dist',
+        'copy:trendFont',
+        'copy:trendImages',
         // 'compass:dist',
         'less',
         'useminPrepare',

@@ -1,7 +1,7 @@
 node_modules
 temp
 dist
-app/components
+app/bower_components
 *.swp
 
 # cache files

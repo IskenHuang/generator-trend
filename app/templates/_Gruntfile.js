@@ -17,7 +17,8 @@ module.exports = function (grunt) {
     // configurable paths
     var yeomanConfig = {
         app: 'app',
-        dist: 'dist'
+        dist: 'dist',
+        bower: 'bower_components'
     };
 
     grunt.initConfig({
@@ -135,7 +136,7 @@ module.exports = function (grunt) {
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
                 fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: 'app/components',
+                importPath: 'app/<%= yeoman.bower %>',
                 relativeAssets: true
             },
             dist: {},
@@ -284,10 +285,10 @@ module.exports = function (grunt) {
                     cwd: '<%= yeoman.app %>',
                     dest: '.tmp',
                     src: [
-                        'components/requirejs/require.js',
-                        'components/jquery/jquery.js',
-                        'components/underscore/underscore.js',
-                        'components/backbone/backbone.js',
+                        '<%= yeoman.bower %>/requirejs/require.js',
+                        '<%= yeoman.bower %>/jquery/jquery.js',
+                        '<%= yeoman.bower %>/underscore/underscore.js',
+                        '<%= yeoman.bower %>/backbone/backbone.js',
                         'scripts/{,*/}*.js'
                     ]
                 }]
@@ -332,7 +333,7 @@ module.exports = function (grunt) {
                 }
             },
             linkComponenets: {
-                command: 'ln -s ../app/components ./dist',
+                command: 'ln -s ../app/<%= yeoman.bower %> ./dist',
                 options: {
                     stdout: true,
                     stderr: true

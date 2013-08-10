@@ -1,10 +1,10 @@
 {
   "name": "generator-trend",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "A generator for Yeoman, create trend style project",
   "keywords": [
     "yeoman-generator",
-	"trend"
+	  "trend"
   ],
   "homepage": "https://github.com/IskenHuang/generator-trend",
   "bugs": "https://github.com/IskenHuang/generator-trend/issues",

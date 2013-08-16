@@ -1,10 +1,10 @@
 require.config(
     paths:
-        jquery         : '../components/jquery/jquery'
-        underscore     : '../components/underscore/underscore'
-        backbone       : '../components/backbone/backbone'
-        text           : '../components/requirejs-text/text'
-        i18next        : '../components/i18next/release/i18next.amd.withJQuery-1.6.3.min'
+        jquery         : '../bower_components/jquery/jquery'
+        underscore     : '../bower_components/underscore/underscore'
+        backbone       : '../bower_components/backbone/backbone'
+        text           : '../bower_components/requirejs-text/text'
+        i18next        : '../bower_components/i18next/release/i18next.amd.withJQuery-1.6.3.min'
 
     shim:
         underscore:

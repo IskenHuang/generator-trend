@@ -135,7 +135,7 @@ module.exports = function (grunt) {
                 cssDir: '.tmp/styles',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
+                fontsDir: '<%= yeoman.app %>/font',
                 importPath: 'app/<%= yeoman.bower %>',
                 relativeAssets: true
             },
@@ -262,7 +262,7 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/*'
+                        'font/*'
                     ]
                 }]
             },

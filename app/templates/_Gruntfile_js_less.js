@@ -297,7 +297,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/fonts/',
+                    cwd: '<%= yeoman.app %>/bower_components/trend-branding-styleguide/fonts/',
                     dest: '<%= yeoman.app %>/font',
                     src: [
                         '**'
@@ -308,7 +308,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>/components/trend-branding-styleguide/img/',
+                    cwd: '<%= yeoman.app %>/bower_components/trend-branding-styleguide/img/',
                     dest: '<%= yeoman.app %>/img/trend/',
                     src: [
                         '**'

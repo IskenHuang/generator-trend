@@ -135,7 +135,7 @@ module.exports = function (grunt) {
                 cssDir: '.tmp/styles',
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/font',
+                fontsDir: '<%= yeoman.app %>/fonts',
                 importPath: 'app/<%= yeoman.bower %>',
                 relativeAssets: true
             },
@@ -262,7 +262,7 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'font/*'
+                        'fonts/*'
                     ]
                 }]
             },
@@ -298,7 +298,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>/bower_components/trend-branding-styleguide/fonts/',
-                    dest: '<%= yeoman.app %>/font',
+                    dest: '<%= yeoman.app %>/fonts',
                     src: [
                         '**'
                     ]

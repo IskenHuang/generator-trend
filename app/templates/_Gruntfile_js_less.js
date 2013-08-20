@@ -262,7 +262,7 @@ module.exports = function (grunt) {
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/*'
+                        'fonts/*'
                     ]
                 }]
             },
@@ -298,7 +298,7 @@ module.exports = function (grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>/bower_components/trend-branding-styleguide/fonts/',
-                    dest: '<%= yeoman.app %>/font',
+                    dest: '<%= yeoman.app %>/fonts',
                     src: [
                         '**'
                     ]

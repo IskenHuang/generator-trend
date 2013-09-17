@@ -1,6 +1,6 @@
 {
   "name": "generator-trend",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A generator for Yeoman, create trend style project",
   "keywords": [
     "yeoman-generator",
@@ -22,7 +22,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.12.0"
+    "yeoman-generator": "~0.13.2"
   },
   "devDependencies": {
     "mocha": "~1.10.0"

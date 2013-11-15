@@ -18,7 +18,8 @@ module.exports = function (grunt) {
     var yeomanConfig = {
         app: 'app',
         dist: 'dist',
-        bower: 'bower_components'
+        bower: 'bower_components',
+        test: 'test'
     };
 
     grunt.initConfig({
@@ -63,7 +64,8 @@ module.exports = function (grunt) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'app')
+                            mountFolder(connect, 'app'),
+                            mountFolder(connect, 'test')
                         ];
                     }
                 }
@@ -73,6 +75,7 @@ module.exports = function (grunt) {
                     middleware: function (connect) {
                         return [
                             mountFolder(connect, '.tmp'),
+                            mountFolder(connect, 'app'),
                             mountFolder(connect, 'test')
                         ];
                     }
@@ -91,12 +94,16 @@ module.exports = function (grunt) {
         open: {
             server: {
                 path: 'http://localhost:<%= connect.options.port %>'
+            },
+            serverTest: {
+                path: 'http://localhost:<%= connect.options.port %>/test.html'
             }
         },
         clean: {
             dist: ['.tmp', '<%= yeoman.dist %>/*'],
             server: '.tmp',
-            distScript: '<%= yeoman.dist %>/scripts'
+            distScript: '<%= yeoman.dist %>/scripts',
+            test: '.grunt'
         },
         jshint: {
             options: {
@@ -338,15 +345,84 @@ module.exports = function (grunt) {
                     stdout: true,
                     stderr: true
                 }
+            },
+            copyDotGrunt: {
+                command: 'cp -r .grunt test',
+                options: {
+                    stdout: true,
+                    stderr: true
+                }
             }
         },
+        plato: {
+            src: {
+                files: {
+                    'plato': [
+                        'app/scripts/views/*.js',
+                        'app/scripts/models/*.js',
+                        'app/scripts/collection/*.js',
+                        'app/scripts/libraries/**/*.js',
+                        'app/scripts/locales/**/*.json',
+                        'app/scripts/routers/**/*.js',
+                        'app/scripts/application.js',
+                        'app/scripts/main.js'
+                    ]
+                }
+            }
+        },
+        removelogging: {
+            dist: {
+                src: '<%= yeoman.dist %>/scripts/**/*.js',
+                dest: '<%= yeoman.dist %>/scripts/**/*.js',
+                options: {
+                    // see below for options. this is optional.
+                }
+            }
+        },
+        jsdoc: {
+            dist: {
+                src: [
+                    '<%= yeoman.app %>/scripts/**/*.js',
+                    '<%= yeoman.app %>/../README.md'
+                ],
+                options: {
+                    destination: 'doc'
+                }
+            }
+        },
+        jasmine: {
+            test: {
+                options: {
+                    src: [
+                        'app/scritps/**/*.js'
+                    ],
+                    host: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>',
+                    specs: [
+                        'spec/*.spec.js'
+                    ],
+                    // helpers: 'spec/*Helper.js',
+                    // template: 'custom.tmpl',
+                    template: require('grunt-template-jasmine-requirejs'),
+                    templateOptions: {
+                        requireConfigFile: 'test/scripts/mainJasmine.js'
+                    },
+                    outfile: 'test/jasmine.html',
+                    timeout: 30000, // 30s
+                    // styles: [
+                    //     'spec/*.css'
+                    // ],
+                    version: '1.3.1',
+                    keepRunner: true
+                }
+            }
+        }
     });
 
     grunt.renameTask('regarde', 'watch');
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build', 'open:server', 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
@@ -358,18 +434,22 @@ module.exports = function (grunt) {
             'less',
             'livereload-start',
             'connect:livereload',
-            'open',
+            'open:server',
             'watch'
         ]);
     });
 
     grunt.registerTask('test', [
         'clean:server',
+        'clean:test',
+        'shell:copyDotGrunt',
         // 'coffee',
         // 'compass',
-        'less',
+        // 'less',
         'connect:test',
-        'mocha'
+        'jasmine:test',
+        'open:serverTest',
+        'watch'
     ]);
 
     grunt.registerTask('build', [

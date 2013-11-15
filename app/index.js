@@ -32,24 +32,30 @@ TrendGenerator.prototype.askFor = function askFor() {
     console.log(this.yeoman);
 
     var prompts = [
-    {
-        name: 'projectName',
-        message: 'What do you want to call your project?',
-        default: 'myProject',
-        warning: 'Error'
-    },
-    {
-        name: 'cssLanguage',
-        message: 'Which stylesheet language (SASS or LESS)?',
-        default: 'LESS',
-        warning: 'Error'
-    },
-    {
-        name: 'isCoffeeScript',
-        message: 'Would you like to Coffee-script (y/n)?',
-        default: 'y',
-        warning: 'Error'
-    }
+        {
+            name: 'projectName',
+            message: 'What do you want to call your project?',
+            default: 'myProject',
+            warning: 'Error'
+        },
+        {
+            name: 'cssLanguage',
+            message: 'Which stylesheet language (SASS or LESS)?',
+            default: 'LESS',
+            warning: 'Error'
+        },
+        {
+            name: 'isCoffeeScript',
+            message: 'Would you like to Coffee-script (y/n)?',
+            default: 'y',
+            warning: 'Error'
+        },
+        {
+            name: 'isJasmine',
+            message: 'Would you like use Jasmine (current not support other test framework)?',
+            default: 'y',
+            warning: 'Error'
+        }
     ];
 
     this.prompt(prompts, function (props) {
@@ -61,6 +67,9 @@ TrendGenerator.prototype.askFor = function askFor() {
             this.isCoffeeScript = false;
         }
 
+        // jasmine
+        this.isJasmine = true;
+
         cb();
     }.bind(this));
 };
@@ -68,6 +77,7 @@ TrendGenerator.prototype.askFor = function askFor() {
 TrendGenerator.prototype.app = function app() {
     var _type = this.isCoffeeScript ? 'coffee' : 'js';
     this.directory('_app', 'app');
+    this.directory('_test', 'test');
     this.template('_index.html', 'app/index.html');
     this.copy('_scripts_'+_type+'/app.'+_type, 'app/scripts/app.'+_type);
     this.copy('_scripts_'+_type+'/EventChannel.'+_type, 'app/scripts/EventChannel.'+_type);

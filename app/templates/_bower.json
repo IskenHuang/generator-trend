@@ -12,7 +12,7 @@
     "backbone": "~0.9.10",
     "modernizr": "~2.6.2",
     "i18next": "~1.6.3",
-    "trend-branding-styleguide": "https://gitlab.tw.trendnet.org/randy_lien/trend-branding-styleguide.git"
+    "trend-branding-styleguide": "https://gitlab.tw.trendnet.org/randy_lien/trend-branding-styleguide/repository/archive.zip"
   },
   "devDependencies": {}
 }

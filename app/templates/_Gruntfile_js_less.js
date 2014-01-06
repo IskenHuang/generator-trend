@@ -1,4 +1,5 @@
 'use strict';
+
 var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -110,10 +111,11 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             },
             all: [
-                'Gruntfile.js',
+                '*.js',
                 '<%= yeoman.app %>/scripts/{,*/}*.js',
+                '!<%= yeoman.app %>/scripts/libraries/*',
                 '!<%= yeoman.app %>/scripts/vendor/*',
-                'test/spec/{,*/}*.js'
+                // 'test/spec/{,*/}*.js'
             ]
         },
         coffee: {
@@ -205,15 +207,17 @@ module.exports = function (grunt) {
         },
         imagemin: {
             dist: {
-                options:{
+                options: {
                     optimizationLevel: 3,
                 },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/images',
+                        src: '{,*/}*.{png,jpg,jpeg}',
+                        dest: '<%= yeoman.dist %>/images'
+                    }
+                ]
             }
         },
         svgmin: {
@@ -415,7 +419,28 @@ module.exports = function (grunt) {
                     keepRunner: true
                 }
             }
-        }
+        },
+        githooks: {
+            options: {
+                // Task-specific options go here.
+            },
+            all: {
+                options: {
+                    // Target-specific options go here
+                },
+                // Hook definitions go there
+                // Will bind the jshint and test:unit tasks
+                // with the template specified above
+                'pre-commit': 'jshint',
+
+                // Will bind the bower:install task
+                // with a specific template
+                // 'post-merge': {
+                //     taskNames: 'bower:install',
+                //     template: 'path/to/another/template'
+                // }
+            }
+        },
     });
 
     grunt.renameTask('regarde', 'watch');
@@ -426,6 +451,7 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run([
+            'githooks:all',
             'clean:server',
             'copy:trendFont',
             'copy:trendImages',

@@ -9,7 +9,7 @@
     "requirejs-text": "~2.0.6",
     "jquery": "~1.9.1",
     "underscore": "~1.4.3",
-    "backbone": "~0.9.10",
+    "backbone": "~1.1.0",
     "modernizr": "~2.6.2",
     "i18next": "~1.6.3",
     "trend-branding-styleguide": "https://gitlab.tw.trendnet.org/randy_lien/trend-branding-styleguide/repository/archive.zip"
